@@ -5,8 +5,9 @@ SRC_DIR := src
 BUILD_DIR := build
 BIN_DIR := bin
 
-SRCS := $(wildcard $(SRC_DIR)/*.cpp)
+SRCS := $(wildcard $(SRC_DIR)/**/*.cpp $(SRC_DIR)/*.cpp)
 OBJS := $(patsubst $(SRC_DIR)/%.cpp, $(BUILD_DIR)/%.o, $(SRCS))
+$(shell mkdir -p $(dir $(OBJS)))
 TARGET := $(BIN_DIR)/checker
 
 $(TARGET): $(OBJS)
