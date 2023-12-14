@@ -1,5 +1,4 @@
-#ifndef AUTHFILE_H
-#define AUTHFILE_H
+#pragma once
 
 #include <string>
 
@@ -10,11 +9,10 @@ namespace auth
     private:
         std::string USER;
         std::string PASS;
+        std::string ROLE;
 
     public:
         authfile(std::string filename = "");
         bool authenticate();
     };
 } // namespace auth
-
-#endif
